@@ -62,6 +62,8 @@ public:
 		@param pBackground A pointer to the texture to use as the background. */
 	virtual void SetBackground(Texture* pBackground) { m_pBackground = pBackground; }
 
+	virtual void SetLoadingScreen(Texture* pLoadingScreen) { m_pLoadingScreen = pLoadingScreen; }
+
 	/** @brief Get the alpha value of the screen.
 		@return The alpha value of the screen. */
 	virtual float GetAlpha() const;
@@ -141,6 +143,8 @@ private:
 
 	Texture* m_pBackground = nullptr;
 
+	Texture* m_pLoadingScreen = nullptr;
+
 	std::vector<GameObject*>* m_pSectors;
 
 	Vector2 m_sectorCount;
@@ -159,6 +163,10 @@ private:
 	virtual Vector2 GetSectorCount() const { return m_sectorCount; }
 
 	virtual Vector2 GetSectorSize() const { return m_sectorSize; }
+
+	Vector2 m_texturePosition;
+
+	int isLoading = 1;
 
 	virtual unsigned int GetTotalSectorCount() const { return m_totalSectorCount; }
 

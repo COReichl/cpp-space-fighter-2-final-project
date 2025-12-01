@@ -233,13 +233,22 @@ void Level::CheckCollisions(std::vector<GameObject *> &gameObjects)
 	}
 }
 
+
+
 void Level::Draw(SpriteBatch& spriteBatch)
 {
 	spriteBatch.Begin();
-
+	
 	const float alpha = GetGameplayScreen()->GetAlpha();
 
 	if (m_pBackground) spriteBatch.Draw(m_pBackground, Vector2::ZERO, Color::WHITE * alpha);
+	
+	
+	if (isLoading < 2) {
+		m_texturePosition = Game::GetScreenCenter() - Vector2::UNIT_X * 350 - Vector2::UNIT_Y * 150;
+		if (m_pLoadingScreen) spriteBatch.Draw(m_pLoadingScreen, m_texturePosition, Color::WHITE * alpha);
+		int isLoading = 2;
+	}
 
 	m_gameObjectIt = m_gameObjects.begin();
 	for (; m_gameObjectIt != m_gameObjects.end(); m_gameObjectIt++)
