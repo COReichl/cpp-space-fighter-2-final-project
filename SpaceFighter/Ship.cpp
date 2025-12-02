@@ -2,6 +2,7 @@
 #include "Ship.h"
 #include "Level.h"
 
+int howmany = 0;
 
 Ship::Ship()
 {
@@ -30,6 +31,7 @@ void Ship::Hit(const float damage)
 
 	GameObject::Deactivate();
 	GetCurrentLevel()->SpawnExplosion(this);
+	howmany++;
 }
 
 IAttachment* Ship::GetAttachment(const std::string& key)

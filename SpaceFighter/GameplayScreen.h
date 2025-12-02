@@ -40,12 +40,10 @@ public:
 
 	/** @brief Load a specific level.
 		@param levelIndex The index of the level to load. */
-	virtual void LoadLevel(const int levelIndex);
+	virtual void LoadLevel(int levelIndex);
 
 
 private:
-
-	int m_levelIndex = 0;
 
 	Level *m_pLevel = nullptr;
 

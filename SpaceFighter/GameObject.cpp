@@ -5,7 +5,6 @@
 uint32_t GameObject::s_count = 0;
 Level *GameObject::s_pCurrentLevel = nullptr;
 
-
 GameObject::GameObject()
 {
 	m_index = s_count;

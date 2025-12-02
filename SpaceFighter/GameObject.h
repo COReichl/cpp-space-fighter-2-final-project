@@ -6,14 +6,12 @@
 
 using namespace KatanaEngine;
 
-
 class Level;
 
 /** @brief Represents a game object in the game.
 	This is the base class for all objects that can be updated, rendered, and checked for collisions. */
 class GameObject
 {
-
 public:
 
 	/** @brief Instantiate a game object. */

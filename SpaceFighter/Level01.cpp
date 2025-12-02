@@ -46,7 +46,6 @@ void Level01::LoadContent(ResourceManager& resourceManager)
 
 	// Setup background
 	SetBackground(resourceManager.Load<Texture>("Textures\\SpaceBackground01.png"));
-	SetLoadingScreen(resourceManager.Load<Texture>("Textures\\Logo.png"));
 
 	Level::LoadContent(resourceManager);
 }

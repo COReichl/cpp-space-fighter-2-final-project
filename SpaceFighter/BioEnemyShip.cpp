@@ -2,6 +2,7 @@
 #include "BioEnemyShip.h"
 #include "Level.h"
 
+extern int howmany;
 
 BioEnemyShip::BioEnemyShip()
 {
@@ -19,7 +20,10 @@ void BioEnemyShip::Update(const GameTime& gameTime)
 		x *= GetSpeed() * gameTime.GetElapsedTime() * 1.4f;
 		TranslatePosition(x, GetSpeed() * gameTime.GetElapsedTime());
 
-		if (!IsOnScreen()) Deactivate();
+		if (!IsOnScreen()) {
+			Deactivate();
+			howmany++;
+		}
 	}
 
 	EnemyShip::Update(gameTime);
