@@ -1,32 +1,34 @@
 
 
-#include "Level01.h"
+#include "Level03.h"
 #include "BioEnemyShip.h"
-int LEVELCOUNT = 21;
+extern int LEVELCOUNT;
 
-void Level01::LoadContent(ResourceManager& resourceManager)
+void Level03::LoadContent(ResourceManager& resourceManager)
 {
 	// Setup enemy ships
-	Texture *pTexture = resourceManager.Load<Texture>("Textures\\BioEnemyShip.png");
+	Texture* pTexture = resourceManager.Load<Texture>("Textures\\BioEnemyShip.png");
 
-	const int COUNT = 21;
+	const int COUNT = 25;
+	LEVELCOUNT = 25;
 
 	double xPositions[COUNT] =
 	{
-		0.25, 0.2, 0.3,
-		0.75, 0.8, 0.7,
-		0.3, 0.25, 0.35, 0.2, 0.4,
-		0.7, 0.75, 0.65, 0.8, 0.6,
-		0.5, 0.4, 0.6, 0.45, 0.55
+		0.25, 0.2, 0.3, 0.75, 0.8,
+		0.7, 0.3, 0.25, 0.35, 0.2,
+		0.4, 0.7, 0.75, 0.65, 0.8,
+		0.6, 0.5, 0.4, 0.6, 0.45, 
+		0.55, 0.6, 0.75, 0.9 , 0.6
 	};
-	
+
 	double delays[COUNT] =
 	{
 		0.0, 0.25, 0.25,
 		3.0, 0.25, 0.25,
 		3.25, 0.25, 0.25, 0.25, 0.25,
 		3.25, 0.25, 0.25, 0.25, 0.25,
-		3.5, 0.3, 0.3, 0.3, 0.3
+		3.5, 0.3, 0.3, 0.3, 0.3, 0.3,
+		0.25, 0.2, 0.37
 	};
 
 	float delay = 3.0; // start delay
@@ -37,15 +39,13 @@ void Level01::LoadContent(ResourceManager& resourceManager)
 		delay += delays[i];
 		position.Set(xPositions[i] * Game::GetScreenWidth(), -pTexture->GetCenter().Y);
 
-		BioEnemyShip *pEnemy = new BioEnemyShip();
+		BioEnemyShip* pEnemy = new BioEnemyShip();
 		pEnemy->SetTexture(pTexture);
 		pEnemy->SetCurrentLevel(this);
 		pEnemy->Initialize(position, (float)delay);
 		AddGameObject(pEnemy);
 	}
-
-	// Setup background
-	SetBackground(resourceManager.Load<Texture>("Textures\\SpaceBackground01.png"));
+	SetBackground(resourceManager.Load<Texture>("Textures\\SpaceBackground03.png"));
 
 	Level::LoadContent(resourceManager);
 }

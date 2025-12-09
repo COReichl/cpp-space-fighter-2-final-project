@@ -2,7 +2,7 @@
 
 #include "Level02.h"
 #include "BioEnemyShip.h"
-
+extern int LEVELCOUNT;
 
 void Level02::LoadContent(ResourceManager& resourceManager)
 {
@@ -10,6 +10,7 @@ void Level02::LoadContent(ResourceManager& resourceManager)
 	Texture* pTexture = resourceManager.Load<Texture>("Textures\\BioEnemyShip.png");
 
 	const int COUNT = 22;
+	LEVELCOUNT = 22;
 
 	double xPositions[COUNT] =
 	{
@@ -43,6 +44,7 @@ void Level02::LoadContent(ResourceManager& resourceManager)
 		pEnemy->Initialize(position, (float)delay);
 		AddGameObject(pEnemy);
 	}
+	SetBackground(resourceManager.Load<Texture>("Textures\\SpaceBackground02.png"));
 
 	Level::LoadContent(resourceManager);
 }

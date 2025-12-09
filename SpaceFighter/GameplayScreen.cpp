@@ -4,10 +4,12 @@
 #include "Level.h"
 #include "Level01.h"
 #include "Level02.h"
+#include "Level03.h"
 
 int m_levelIndex = 0;
 int levelIndex = 0;
 extern int howmany;
+extern int LEVELCOUNT;
 
 GameplayScreen::GameplayScreen(int levelIndex)
 {
@@ -33,6 +35,7 @@ void GameplayScreen::LoadLevel(int levelIndex)
 	{
 	case 0: std::cout << "Starting Level 1 \n"; m_pLevel = new Level01(); break;
 	case 1: std::cout << "Starting Level 2 \n"; m_pLevel = new Level02(); break;
+	case 2: std::cout << "Starting Level 3 \n"; m_pLevel = new Level03(); break;
 	}
 	m_pLevel->SetGameplayScreen(this);
 	m_pLevel->LoadContent(*m_pResourceManager);
@@ -46,7 +49,7 @@ void GameplayScreen::HandleInput(const InputState& input)
 void GameplayScreen::Update(const GameTime& gameTime)
 {
 	m_pLevel->Update(gameTime);
-	if (howmany > 20) {
+	if (howmany == LEVELCOUNT) {
 		m_levelIndex++;
 		SetOnRemove([this]() { AddScreen(new GameplayScreen()); });
 		Exit();
