@@ -172,6 +172,7 @@
   <ItemGroup>
     <ClCompile Include="BioEnemyShip.cpp" />
     <ClCompile Include="Blaster.cpp" />
+    <ClCompile Include="BossEnemyShip.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="CollisionType.cpp" />
     <ClCompile Include="EnemyShip.cpp" />
@@ -182,6 +183,7 @@
     <ClCompile Include="Level01.cpp" />
     <ClCompile Include="Level02.cpp" />
     <ClCompile Include="Level03.cpp" />
+    <ClCompile Include="Level04.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainMenuScreen.cpp" />
     <ClCompile Include="PlayerShip.cpp" />
@@ -199,6 +201,7 @@
   <ItemGroup>
     <ClInclude Include="BioEnemyShip.h" />
     <ClInclude Include="Blaster.h" />
+    <ClInclude Include="BossEnemyShip.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="CollisionType.h" />
     <ClInclude Include="EnemyShip.h" />
@@ -209,6 +212,7 @@
     <ClInclude Include="Level01.h" />
     <ClInclude Include="Level02.h" />
     <ClInclude Include="Level03.h" />
+    <ClInclude Include="Level04.h" />
     <ClInclude Include="MainMenuScreen.h" />
     <ClInclude Include="PlayerShip.h" />
     <ClInclude Include="Projectile.h" />
